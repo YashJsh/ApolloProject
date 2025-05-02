@@ -55,6 +55,7 @@ const Content : React.FC = () => {
         setDoctors(doctors);
         setTotal(total);
       }catch(err){
+        console.error(err);
         setError("Error Loading Doctors");
       } finally{
         setLoading(false);

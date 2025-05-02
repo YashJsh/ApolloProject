@@ -1,6 +1,5 @@
 import { Filters } from "@/components/Content";
 import axios from "axios"
-import { error } from "console";
 
 export interface Doctor{
     _id : string;

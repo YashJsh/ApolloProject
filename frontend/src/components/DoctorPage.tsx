@@ -18,7 +18,6 @@ const DoctorPage: React.FC<DoctorPageProps> = ({
   totalPages,
   onPageChange,
   loading,
-  error,
 }) => {
   const renderPagination = () => {
     if (totalPages <= 1) return null;

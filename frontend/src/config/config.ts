@@ -1,1 +1,1 @@
-export const BACKEND_URL = "https://apolloproject.onrender.com/"
+export const BACKEND_URL = "https://apolloproject.onrender.com"

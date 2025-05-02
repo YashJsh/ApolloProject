@@ -66,7 +66,6 @@ const Content : React.FC = () => {
     let isMounted = true;
     const fetchData = async ()=>{
       if (isMounted){
-        console.log("current filters : ", filters)
         await debouncedFetch(filters)
       }
     }

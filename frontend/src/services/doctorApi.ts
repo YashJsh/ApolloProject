@@ -30,7 +30,6 @@ export const fetchDoctors = async (filters : Filters) =>{
     })
 
     try {
-        console.log(params);
         const response = await axios.get(`${BACKEND_URL}/api/doctors?${params}`);
         return response.data;
     } catch (error) {

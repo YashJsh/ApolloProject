@@ -1,10 +1,10 @@
-import {Router} from "express";
+import {Router, Request, Response} from "express";
 import Doctor, { doctorSchema, ListDoctorQuery } from "../model/doctor";
 import { parseExperienceRange } from "../helper";
 
 const router = Router();
 
-router.post("/add-doctor", async(req, res) =>{
+router.post("/add-doctor", async(req : Request, res : Response) =>{
     try{
         const body : doctorSchema= req.body;
         const newDoctor = new Doctor(body);
@@ -21,7 +21,7 @@ router.post("/add-doctor", async(req, res) =>{
     }
 });
 
-router.get("/doctors", async (req, res) => {
+router.get("/doctors", async(req : Request, res : Response) => {
     try {
       const {
         page = 1,

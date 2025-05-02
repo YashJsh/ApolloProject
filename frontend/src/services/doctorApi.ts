@@ -1,5 +1,4 @@
 import { Filters } from "@/components/Content";
-import { BACKEND_URL } from "@/config/config";
 import axios from "axios"
 
 export interface Doctor{
@@ -17,6 +16,8 @@ export interface Doctor{
 
 
 export const fetchDoctors = async (filters : Filters) =>{
+
+    const BACKEND_URI = process.env.NEXT_PUBLIC_API_URL ;
     const params = new URLSearchParams();
     Object.entries(filters).forEach(([key, value])=>{
         if(Array.isArray(value)){
@@ -30,7 +31,7 @@ export const fetchDoctors = async (filters : Filters) =>{
     })
 
     try {
-        const response = await axios.get(`${BACKEND_URL}/api/doctors?${params}`);
+        const response = await axios.get(`${BACKEND_URI}/api/doctors?${params}`);
         return response.data;
     } catch (error) {
         console.error("Failed to fetch doctors : ", error);

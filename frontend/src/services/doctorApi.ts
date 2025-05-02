@@ -1,4 +1,5 @@
 import { Filters } from "@/components/Content";
+import { BACKEND_URL } from "@/config/config";
 import axios from "axios"
 
 export interface Doctor{
@@ -30,7 +31,7 @@ export const fetchDoctors = async (filters : Filters) =>{
 
     try {
         console.log(params);
-        const response = await axios.get(`http://localhost:3006/api/doctors?${params}`);
+        const response = await axios.get(`${BACKEND_URL}/api/doctors?${params}`);
         return response.data;
     } catch (error) {
         console.error("Failed to fetch doctors : ", error);
